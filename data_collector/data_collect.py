@@ -32,21 +32,26 @@ class Collect:
                 soup3 = BeautifulSoup(pg_letters.content, 'html.parser')
                 letters = soup3.find_all('ol', {'id': 'topMusicList'})
                 for let in letters:
-                    for l in let.find_all('li'):
+                    for k in let.find_all('li'):
                         raw = []
                         raw.append(sing.find("p", {"class": "h22 w1 itemTitle"}).getText())
                         raw.append(sing.find("a")['href'])
                         raw.append(categorys[link])
                         raw.append(links[link])
-                        raw.append(l.find("a").getText())
-                        raw.append(l.find("a")['href'])
-                        raw.append(l.find_all('div', {'class': 'songSliderItem'})[0].getText())
-                        pg_l = requests.get(self.url + l.find("a")['href'])
+                        raw.append(k.find("a").getText())
+                        raw.append(k.find("a")['href'])
+                        pg_l = requests.get(self.url + k.find("a")['href'])
                         soup4 = BeautifulSoup(pg_l.content, 'html.parser')
                         raw.append(str(soup4.find_all('div', {'id': 'lyrics'})[0]))
+                        try:
+                            raw.append(soup4.find_all('a', {'class': 'h16'})[3].getText())
+                        except:
+                            raw.append('')
                         dataset.append(raw)
+
+        import pdb; pdb.set_trace()
                         
-        pd.DataFrame(dataset, columns = ["singer", "singer_link", "category", "category_link", "music_name", "music_link", "is_pt", "lyrics"]).to_csv('input/df.csv', encoding='utf-8')
+        pd.DataFrame(dataset, columns = ["singer", "singer_link", "category", "category_link", "music_name", "music_link", "lyrics", "is_pt"]).to_pickle('input/songs.pkl')
 
 
         
