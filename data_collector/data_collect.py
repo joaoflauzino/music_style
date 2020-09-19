@@ -48,9 +48,7 @@ class Collect:
                         except:
                             raw.append('')
                         dataset.append(raw)
-
-        import pdb; pdb.set_trace()
-                        
+                                        
         pd.DataFrame(dataset, columns = ["singer", "singer_link", "category", "category_link", "music_name", "music_link", "lyrics", "is_pt"]).to_pickle('input/songs.pkl')
 
 
