@@ -11,3 +11,7 @@ Predict music style based on lyrics.
 # Predictive analysis
 
 - Is it possible to predict the category based on lyrics?
+
+# Status
+
+In progress...
