@@ -1,4 +1,4 @@
-# music_style_prediction
+# music_style
 
 Predict music style based on lyrics.
 
