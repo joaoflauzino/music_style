@@ -14,4 +14,4 @@ Predict music style based on lyrics.
 
 # Status
 
-In progress...
+For now it was created just web scraper, but in the next setps I'll execute prediction part :)
