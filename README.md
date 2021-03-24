@@ -1,17 +1,6 @@
 # music_style
 
-Predict music style based on lyrics.
+O objetivo deste projeto é predizer estilos musicais através das letras das músicas. Para isso, foi construído um scraper para a coleta dos dados do site do vagalume.com.br para utilização de um dataset com as letras e seus respectivos estilos musicais.
 
-# Exploratory analysis
-
-- What kinf of words are there in each category? 
-- There are big differences between Funk and Sertanejo? (Example)
-- Is there any type of music that has a lower vocabulary than others?
-
-# Predictive analysis
-
-- Is it possible to predict the category based on lyrics?
-
-# Status
-
-For now it was created just web scraper, but in the next setps I'll execute prediction part :)
+- Para utilização do scraper, basta executar o código "main.py".
+- As análises estão contidas na paste "jupyter".
